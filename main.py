@@ -19,9 +19,9 @@ def predict():
     return render_template('index.html',prediction_text="Number of Weekly Rides Should be {}".format(math.floor(output)))
 
 if __name__ == '__main__':
-    # app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080)
 
-    app.run(debug=True)
+    #app.run(debug=True)
 
 #  Machine learning code
 
