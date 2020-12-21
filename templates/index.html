@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>OLA Rides Prediction Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="main">
+        <div class="box">
+            <div>
+                <h1>OLA Weekly Rides Analysis</h1>
+            </div>
+            <div>
+                <form action="{{url_for('predict')}}" method="post">
+                    <div>
+                        <input type="text" name="Priceperweek" placeholder="Price per week" required="required">
+                    </div>
+                    <div>
+                        <input type="text" name="Population" placeholder="Population" required="required">
+                    </div>
+                    <div>
+                        <input type="text" name="Monthlyincome" placeholder="Monthly income" required="required">
+                    </div>
+                    <div>
+                        <input type="text" name="Averageparkingpermonth" placeholder="Average parking per month" required="required">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Predict</button>
+                    </div>
+                </form>
+            </div>
+            <div class="output">
+                {{ prediction_text }}
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
